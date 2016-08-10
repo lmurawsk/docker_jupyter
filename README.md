@@ -1,5 +1,5 @@
 # Jupyter Server
-Jupyter Notebook and Jupyter Server
+Jupyter Notebook and Jupyter Lab servers
 
 ## What it Gives You
 * Jupyter Notebook and Jupyter Lab
