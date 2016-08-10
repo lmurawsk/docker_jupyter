@@ -1,19 +1,17 @@
 FROM continuumio/anaconda
 
-	# install jupyter & jupyter lab
+    # install jupyter & jupyter lab
 RUN cd /opt/conda/bin && \
     conda install jupyter -y --quiet && \
     pip install jupyterlab && \  
     jupyter serverextension enable --py jupyterlab && \
-	mkdir /opt/notebooks
+    mkdir /opt/notebooks
 
-	# Data Science packages
-
-    
-	# python connectivity packages
+    # python connectivity packages
 RUN cd /opt/conda/bin && \
     pip install influxdb
 
+    # other packages
 
     # createscript to launch jupyter notebook and jupyter lab in the background
 RUN echo '#!/bin/bash\n\
