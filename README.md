@@ -1,30 +1,12 @@
-# Jupyter Server
-Jupyter Notebook and Jupyter Lab servers
+## What?
+Basic environment: jupyter & jupyter lab
 
-## What it Gives You
-* Jupyter Notebook and Jupyter Lab
-* Anaconda with Python 2.7.x
-* Additional packages: influxdb
-
-## Build command (in Dockerfile directory):
+## Build
 ```
-docker build -t jupyter:v01 .
+docker run -dt -p 8888-8889:8888-8889 -v /opt/host_dir/:/opt/notebooks --name jupyter lmurawsk/docker_jupyter:latest
 ```
 
-## Basic Use
+## Use
+* Notebook - [localhost:8888](http://localhost:8888)
+* Lab - [localhost:8889](http://localhost:8889)
 
-The following command starts a container with the Jupyter Notebook server listening for HTTP connections on port 8888 and Jupyter Lab server listening on port 8889. Windows volume is mounted to /opt/notebooks directory:
-
-```
-docker run -dt -p 8888-8889:8888-8889 -v //c/Users/windows_folder/:/opt/notebooks --name jupyter jupyter:v01
-```
-
-## Accessing jupyter servers
-
-Servers are available in your browser under localhost:8888 (Notebook) and localhost:8889 (Lab).
-
-Depending on docker app you're using, localhost:8888 is docker-machine ip:8888 (when usin Docker Toolbox), or localhost:8888 (when using Docker for Windows).  
-
-## Running container without jupyter server
-
-Jupyter servers are started by running start_script.sh in CMD section. However, you can easily override it, by specifying a command at the end of docker run... (in this case servers won't start)
