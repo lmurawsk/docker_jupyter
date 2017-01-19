@@ -1,4 +1,5 @@
 seaborn
 ggplot
+influxdb
 git+https://github.com/hyperopt/hyperopt.git
 ml_metrics
